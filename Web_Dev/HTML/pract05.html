@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .plate {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(220, 20, 60, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #obj {
+            display: flex;
+            background-color: crimson;
+            color: black;
+            border: 3px solid gold;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Mea Culpa', cursive;
+            font-size: 20px;
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            /* transition-property:background-color;transition-duration:time diration; transition-timing-function:ease; transition-delay: time delay;  */
+            transition: all 1s ease-in-out;
+        }
+        
+        #obj:hover {
+            background-color: crimson;
+            color: gold;
+            width: 150px;
+            height: 150px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="plate">
+        <div id="obj">
+            <h3>Blade</h3>
+        </div>
+    </div>
+</body>
+
+</html>

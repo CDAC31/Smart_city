@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Island+Moments&family=Love+Light&family=Mea+Culpa&display=swap" rel="stylesheet">
+    <style>
+        .packet {
+            background-color: crimson;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .ball {
+            font-family: 'Love Light', cursive;
+            font-size: 50px;
+            text-align: center;
+            color: gold;
+            position: relative;
+            margin: auto;
+            width: 15%;
+            border: 3px solid gold;
+            /* animation-name: circus;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            animation-direction: alternate-reverse;
+            animation-timing-function: ease-in-out; */
+            animation: circus 5s infinite forwards normal ease-in-out;
+        }
+        
+        @keyframes circus {
+            0% {
+                top: 0px;
+                left: 0px;
+            }
+            25% {
+                top: 250px;
+                left: 250px;
+            }
+            50% {
+                top: 500px;
+                left: 0px;
+            }
+            75% {
+                top: 250px;
+                left: -250px;
+            }
+            100% {
+                top: 0px;
+                left: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="packet">
+        <div class="ball">
+            Short stick
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Project01</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Island+Moments&family=Love+Light&family=Mea+Culpa&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Island Moments', cursive;
+            color: gold;
+            background-color: black;
+            font-weight: 900;
+            font-size: 3rem;
+        }
+        
+        .container h1 {
+            font-size: 5rem;
+        }
+        
+        input[placeholder] {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="success" class="alert alert-success alert-dismissible fade" role="alert">
+        <strong>Success!</strong> Your Avatar Has Been Created.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">x</span>
+        </button>
+    </div>
+    <div id="failure" class="alert alert-danger alert-dismissible fade" role="alert">
+        <strong>Error!</strong> Your Avatar Has Failed To Be Formed.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">x</span>
+            </button>
+    </div>
+    <div class="container">
+        <h1>Create Your Avatar</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your username">
+                <small id="namevalid" class="form-text text-muted invalid-feedback">
+                        Your username must be 2-15 characters and should not start with a number
+                      </small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                <small id="emailvalid" class="form-text text-muted invalid-feedback">
+                        Your email must be a valid email
+                      </small>
+            </div>
+            <div class="form-group">
+                <label for="car">Select your class</label>
+                <select class="form-control" id="car">
+                    <option>Assassin</option>
+                    <option>Achamist</option>
+                    <option>Dark mage</option>
+                    <option>Mage</option>
+                    <option>Machanic</option>
+                    <option>Pugilist</option>
+                    <option>Swordsman</option>
+                    <option>Summoner</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Enter your address</label>
+                <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="phone">Enter your phone number</label>
+                <input class="form-control" name="phone" id="phone" rows="3">
+                <small id="phonevalid" class="form-text text-muted invalid-feedback">
+                        Your phone number must be 10 digit long
+                      </small>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Any other message...</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button id="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</body>
+<script src="JS/project01.js"></script>
+
+</html>

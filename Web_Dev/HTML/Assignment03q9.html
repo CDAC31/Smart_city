@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment03q9</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let outer = (a) => {
+        let b = 10;
+        const inner = () => {
+            let sum = a + b;
+            console.log(`sum = ${sum}.`)
+        }
+        return inner;
+    }
+
+    let inr = outer(15);
+
+    inr();
+</script>
+
+</html>

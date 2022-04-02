@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Island+Moments&family=Mea+Culpa&display=swap" rel="stylesheet">
+    <style>
+        body::before {
+            background: url('https://picsum.photos/200/300.jpg') no-repeat center center/cover;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            z-index: -1;
+            opacity: 0.5;
+            top: 0px;
+            left: 0px;
+        }
+        
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .card {
+            font-family: 'Island Moments', cursive;
+            font-size: xx-large;
+            list-style: none;
+            margin: 20px 15px;
+            background-color: darkblue;
+            color: whitesmoke;
+            padding: 105px 100px;
+            border: 3px solid rgb(192, 192, 192);
+            box-shadow: 10px 10px 5px 5px rgb(88, 88, 88);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li class="card" id="card1">
+            <h4>King</h4>
+        </li>
+        <li class="card" id="card2">
+            <h4>Queen</h4>
+        </li>
+        <li class="card" id="card3">
+            <h4>Jack</h4>
+        </li>
+        <li class="card" id="card4">
+            <h4>Ace</h4>
+        </li>
+    </ul>
+</body>
+
+</html>

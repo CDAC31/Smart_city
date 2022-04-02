@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment03q7</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let obj = {
+        name: "Dj",
+        age: 24,
+
+        get prof() {
+            return `${obj.profession}`
+        },
+
+        set prof(value) {
+            this.profession = value;
+        }
+    };
+
+    obj.prof = prompt("Enter Profession", "Accountant");
+
+    console.log(obj);
+</script>
+
+</html>

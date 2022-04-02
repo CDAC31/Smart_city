@@ -1,0 +1,74 @@
+.menu ul li a {
+    font-size: 1rem;
+    padding: 0px;
+    margin: 1px;
+}
+
+#n1 img {
+    display: flex;
+    margin: 0px auto 50px;
+    height: 250px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+#n2 img {
+    display: flex;
+    margin: 0px auto 50px;
+    height: 250px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+#n3 img {
+    display: flex;
+    margin: 0px auto 50px;
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+#n4 img {
+    display: flex;
+    margin: 0px auto 50px;
+    height: 250px;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+#n5 img {
+    display: flex;
+    margin: 0px auto 50px;
+    height: 270px;
+    width: 175px;
+    justify-content: center;
+    align-items: center;
+}
+
+#n6 img {
+    display: flex;
+    margin: 0px auto 50px;
+    height: 250px;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    width: 75%;
+    margin: auto auto auto 10%;
+    justify-content: center;
+}
+
+.novels h2 {
+    display: flex;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: gold;
+    justify-content: center;
+    align-items: center;
+}

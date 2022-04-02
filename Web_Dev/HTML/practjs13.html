@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practjs13</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const pronto = {
+        isName: function() {
+            console.log(`${this.name} is new here`);
+        },
+
+        changename: function(newname) {
+            this.name = newname;
+        }
+    }
+
+    const ryuu = Object.create(pronto);
+    ryuu.name = "gulbaz";
+    ryuu.species = "fedorra";
+
+    ryuu.isName();
+    ryuu.changename("zablug");
+    console.log(ryuu);
+</script>
+
+</html>

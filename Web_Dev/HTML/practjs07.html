@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        #btn {
+            background-color: crimson;
+            color: gold;
+            border: 1px solid gold;
+            padding: 5px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Gift BOX</h2>
+        <para id="para">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex facilis quo quam earum, totam sint assumenda distinctio illum optio impedit vel non ut culpa expedita minima, perspiciatis quaerat deserunt repellat! Quas ratione magnam distinctio repudiandae.
+        </para>
+    </div>
+    <button id="btn" onclick="toggle()">Hide</button>
+</body>
+<script>
+    function toggle() {
+        let btn = document.getElementById('btn');
+        let para = document.getElementById('para');
+        if (para.style.display != 'none') {
+            para.style.display = 'none';
+            btn.textContent = 'show';
+        } else {
+            btn.textContent = 'hide';
+            para.style.display = 'block';
+        }
+    }
+</script>
+
+</html>

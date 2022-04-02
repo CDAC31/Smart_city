@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Inheritance</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class student {
+
+        constructor(name, rollno, branch) {
+            this.name = name;
+            this.rollno = rollno;
+            this.branch = branch;
+        }
+
+        intro() {
+            console.log(`Hi myself ${this.name} my rollno is ${this.rollno} and im from ${this.branch} branch`);
+        }
+    }
+
+    let stu = new student("bologny", 47, "Atronomy");
+    console.log(stu);
+    stu.intro();
+
+    class committee extends student {
+        constructor(name, rollno, branch, committee_name) {
+            super(name, rollno, branch);
+            this.comtn = committee_name;
+        }
+
+        slogan() {
+            console.log(`${this.comtn} the sovreign of the ${this.branch} propoganda.`);
+        }
+    }
+
+    let comm = new committee("Subanshu", 77, "Mechanical", "Mechanical-Divinity");
+    console.log(comm);
+    comm.slogan();
+</script>
+
+</html>

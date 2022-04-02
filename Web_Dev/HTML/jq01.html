@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquiery Tots</title>
+</head>
+
+<body>
+    <p>TALKING BODY</p>
+    <button id="btn">Toggle</button>
+    <div id="wiki">Lets play a game of Hide and Seek...</div>
+</body>
+<script src="JS/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(() => {
+        // $('p').click(() => {
+        //     console.log("you have clicked on my boddy!!", this);
+        // });
+
+        // $('.odd').click(); //shows the class specific paras in console...
+
+        // $('#btn').click(() => {
+        //     $('#wiki').fadeToggle(800);
+        // });
+        $('#btn').click(() => {
+            $('#wiki').animate({
+                opacity: 0.25,
+            }, 1000);
+        });
+
+
+    })
+</script>
+
+</html>

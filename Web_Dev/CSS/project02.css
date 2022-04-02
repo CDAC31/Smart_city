@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(59, 53, 53);
+}
+
+.imgbox {
+    background-image: url("WOM.jpg");
+    position: relative;
+    height: 250px;
+    width: 185px;
+    top: 14px;
+    left: 10px;
+    border: 2px solid gold;
+    cursor: pointer;
+}
+
+.blackbox {
+    display: inline-block;
+    height: 280px;
+    width: 210px;
+    background-color: crimson;
+    margin: 10px;
+    border: 2px solid gold;
+}
+
+.hold {
+    border: 2px solid silver;
+}
+
+.hide {
+    display: none;
+}
+
+.dashed {
+    background-color: black;
+    border-style: dashed;
+}

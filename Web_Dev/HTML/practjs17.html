@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Api</title>
+</head>
+
+<body>
+</body>
+<script>
+    // function getdata() {
+    //     console.log("start of getdata");
+    //     url = "Dj.txt";
+    //     fetch(url).then((Response) => {
+    //         console.log("inside first then");
+    //         return Response.text();
+    //     }).then((data) => {
+    //         console.log("inside second then");
+    //         console.log(data);
+    //     })
+    // }
+    function postdata() {
+        url = "https://reqres.in/api/users";
+        data = '{"name": "morpheus111","job": "leader111","id": "192111","createdAt": "2022-01-08T03:39:49.658Z"}'
+        params = {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: data
+        }
+        fetch(url, params).then(Response => Response.json()).then(data => console.log(data))
+    }
+
+    postdata();
+</script>
+
+</html>

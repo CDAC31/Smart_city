@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee UI</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        nav {
+            text-align: center;
+        }
+        
+        a {
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        table {
+            text-align: center;
+            width: 50%;
+            margin: auto;
+        }
+        
+        .det {
+            width: 60%;
+            margin: auto;
+        }
+    </style>
+    <script>
+        const Resturl = "employee"
+
+        function Animate() {
+            $("a:eq(0)").click(() => {
+                $("div").hide(10);
+                $("div:eq(0)").show(10);
+                populate();
+            });
+            $("a:eq(1)").click(() => {
+                $("div").hide(10);
+                $("div:eq(1)").show(10);
+            });
+            $("a:eq(2)").click(() => {
+                $("div").hide(10);
+                $("div:eq(0)").show(10);
+                deletefunc();
+            });
+
+            $("#btnadd").click(addRecord);
+            $("#btnupdate").click(updateRecord);
+
+        }
+        $(document).ready(() => {
+            $("div").hide(10);
+            Animate();
+        })
+
+        function populate() {
+            $("table").find("tr:gt(0)").remove();
+            $.get(Resturl, (data) => {
+                data.forEach((emp) => {
+                    let row = `<tr><td>${emp.empid}</td><td>${emp.empname}</td><td>${emp.empsalary}</td><td><a href="#" class = "editclass" eid = "${emp.empid}">Edit</a></td></tr>`;
+                    $("table").append(row);
+
+                    $(".editclass").click(function() {
+                        $("div").hide(10);
+                        $("div:eq(2)").show(10);
+                        let id = $(this).attr("eid")
+                        let url = Resturl + "/" + id;
+                        console.log(url);
+                        $.get(url, (data) => {
+                            const rec = this.data[0];
+                            console.log(data);
+                            $("div:eq(2)>input:eq(0)").val(rec.empid)
+                            $("div:eq(2)>input:eq(1)").val(rec.empname)
+                            $("div:eq(2)>input:eq(2)").val(rec.empsalary)
+                        })
+                    })
+                });
+            })
+        }
+
+        function addRecord() {
+            const emp = {} //fill the input into the add employee div...
+            emp.empid = $("#txtid").val()
+            emp.empname = $("#txtname").val()
+            emp.empsalary = $("#txtsal").val()
+            $.post(Resturl, emp, (res) => alert(res))
+        }
+
+        function updateRecord() {
+            const emp = {}
+            emp.empid = $("#upid").val()
+            emp.empname = $("#upname").val()
+            emp.empsalary = $("#upsal").val()
+            $.ajax({
+                'url': Resturl,
+                'method': 'PUT',
+                'data': emp,
+                'success': function(res) {
+                    alert(res);
+                }
+            })
+        }
+
+        function deletefunc() {
+            const id = prompt("Enter the id of employee to be deleted")
+            const delurl = Resturl + "/" + id;
+            $.ajax({
+                "url": delurl,
+                'method': "DELETE",
+                'success': function(res) {
+                    alert(res);
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Display Record</a>
+        <a href="#">Add Record</a>
+        <a href="#">Delete Record</a>
+    </nav>
+    <div>
+        <h2>Record Table</h2>
+        <table border="1">
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Employee Salary</th>
+            </tr>
+        </table>
+    </div>
+    <div class="det">
+        <h2>Add New Employee</h2>
+        <hr>
+        <input type="text" id="txtid" placeholder="Employee Id">
+        <input type="text" id="txtname" placeholder="Employee Name">
+        <input type="text" id="txtsal" placeholder="Employee Salary">
+        <button id="btnadd">Add Record</button>
+    </div>
+    <div>
+        <h2>Edit Details</h2>
+        <hr>
+        <input type="text" id="upid" placeholder="Employee Id">
+        <input type="text" id="upname" placeholder="Employee Name">
+        <input type="text" id="upsal" placeholder="Employee Salary">
+        <button id="btnupdate">Update Record</button>
+    </div>
+</body>
+
+</html>

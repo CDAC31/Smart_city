@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment03q6</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const person = {
+        Info: function() {
+            console.log(`Hello my name is ${this.name}, Guess if i'm human? ${this.isHuman}`);
+        }
+    };
+
+    let me = Object.create(person);
+
+    me.name = 'Azik';
+    me.isHuman = false;
+
+    me.Info();
+</script>
+
+</html>

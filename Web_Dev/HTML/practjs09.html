@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Training</title>
+</head>
+
+<body>
+    <div id="books">
+        <h2>Books</h2>
+        <ul>
+            <li class="bk" id="b1">Rather <button class="btn">del</button></li>
+            <li class="bk" id="b2">Die <button class="btn">del</button></li>
+            <li class="bk" id="b3">Than <button class="btn">del</button></li>
+            <li class="bk" id="b4">Be <button class="btn">del</button></li>
+            <li class="bk" id="b5">Shackled <button class="btn">del</button></li>
+        </ul>
+    </div>
+</body>
+<script>
+    let del = document.querySelectorAll(#books.btn);
+    Array.from(del).forEach(function(btn) {
+        btn.addEventListner('click', function(e) {
+            let li = e.target.parentElement;
+            li.parentElement.removeChild(li);
+        })
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment03q5</title>
+    <style>
+        #timedis {
+            text-align: center;
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 id="timedis"></h3>
+</body>
+<script>
+    function tm() {
+        let time = new Date();
+        console.log(time);
+        document.getElementById('timedis').innerHTML = time;
+    }
+    setInterval(tm, 1000);
+</script>
+
+</html>

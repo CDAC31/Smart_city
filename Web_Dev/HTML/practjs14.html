@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldschool Inhetitance</title>
+</head>
+
+<body>
+
+</body>
+<SCRipt>
+    let flour = {
+        thisis: function() {
+            console.log("This is maida")
+        },
+
+        whatto: function(make) {
+            this.make = make;
+            console.log(`Lets make a ${this.make}`);
+        }
+    }
+
+    let cake = Object.create(flour);
+    cake.name = "Maida";
+    cake.cost = 55;
+    cake.thisis();
+    cake.whatto("cake");
+    console.log(cake);
+</SCRipt>
+
+</html>

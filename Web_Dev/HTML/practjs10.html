@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listners</title>
+
+</head>
+
+<body>
+    <h2 id="hed">Spontanious</h2>
+</body>
+<script>
+    let gru = (message, bgcolor, clr) => {
+        let gd = document.getElementById('hed');
+        gd.innerText = message;
+        gd.style.backgroundColor = bgcolor;
+        gd.style.color = clr;
+
+    };
+
+    let hed = document.getElementById('hed');
+    hed.addEventListener('click', function() {
+        gru('Grusome Death', 'crimson', 'gold');
+
+    });
+</script>
+
+</html>

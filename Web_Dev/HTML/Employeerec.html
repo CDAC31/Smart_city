@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Record</title>
+    <script src="./JS/classObj.js"></script>
+</head>
+
+<body>
+    <h2>Employee Register</h2>
+    <div>
+        <input type="number" id="txtid" placeholder="EmployeeId">
+        <input type="text" id="txtname" placeholder="EmployeeName">
+        <input type="text" id="txtaddrs" placeholder="EmployeeAddress">
+        <button onclick="saveEntry()">Save Entry</button>
+    </div>
+    <div><button onclick="showDetails()">Show Details</button><br>
+        <span id="spanShow"></span></div>
+</body>
+<script>
+    function saveEntry() {
+        let id = parseInt(document.getElementById("txtid").value);
+        let name = document.getElementById("txtname").value;
+        let address = document.getElementById("txtaddrs").value;
+        let emp = new Employee(id, name, address);
+        localStorage.setItem("empData", JSON.stringify(emp));
+        alert("Employee datails have been saved");
+    }
+
+    function showDetails() {
+        let createObj = JSON.parse(localStorage.getItem("empData"))
+        let data = `Employee Id : ${createObj.empid} Employee Name : ${createObj.empname} Employee Address : ${createObj.empaddrs}`
+        document.getElementById("spanShow").innerText = data;
+    }
+</script>
+
+</html>

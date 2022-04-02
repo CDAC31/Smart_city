@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment03q4</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function counter() {
+        return new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                const error = false;
+                if (!error) {
+                    console.log("Order has been prepared");
+                    resolve();
+                } else
+                    console.log("Sorry your order will take some time")
+                reject;
+            }, 2000);
+        })
+    }
+
+    counter().then(function() {
+        console.log("Thanks");
+    }).catch(function*(error) {
+        console.log("No need im done here")
+    })
+</script>
+
+</html>

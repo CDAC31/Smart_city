@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Enter a number between 1 - 7 to print that day of the week</h3>
+    <button onclick="funct()">Enter</button>
+    <p id="wkd">weeks;</p>
+</body>
+<script>
+    function funct() {
+        let answ;
+        let week = prompt("Enter value between 1 - 7", "1");
+        switch (week) {
+            case "1":
+                answ = "Sunday";
+                break;
+
+            case "2":
+                answ = "Monday";
+                break;
+
+            case "3":
+                answ = "Tuesday";
+                break;
+
+            case "4":
+                answ = "Wednesday";
+                break;
+
+            case "5":
+                answ = "Thursday";
+                break;
+
+            case "6":
+                answ = "Friday";
+                break;
+
+            case "7":
+                answ = "Saturday";
+                break;
+
+            default:
+                answ = "Enter right sequence";
+        }
+
+        document.getElementById("wkd").innerHTML = answ;
+    }
+</script>
+
+</html>

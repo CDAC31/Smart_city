@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <script src="./JS/classObj.js"></script>
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+            vertical-align: top;
+            width: 100%;
+            text-align: center;
+        }
+        
+        table {
+            margin: auto;
+        }
+        
+        nav {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let mgr = new EmpManager();
+
+        function addEntry() {
+            let id = parseInt($("#txtid").val());
+            let name = $("#txtname").val();
+            let address = $("#txtaddrs").val();
+            let emp = new Employee(id, name, address);
+            mgr.addEmployee(emp);
+            alert("Entry has been sucessfully added")
+        }
+
+        function onEdit() {
+
+        }
+
+        function showAll() {
+            let records = mgr.getAllemployee();
+            $("#tblrecords").find("tr:gt(0)").remove();
+            for (const emp of records) {
+                let row = `<tr><td>${emp.empid}</td><td>${emp.empname}</td><td>${emp.empaddrs}</td><td><a class="edit" href = "#" eid = "${emp.empid}" onClick="onEdit()">Edit</a></td></tr>`;
+                $("#tblrecords").append(row)
+            }
+
+            $(".edit").click(function() {
+                let id = $(this).attr("eid")
+                let data = mgr.getAllemployee();
+                let selected = data.find((e) => e.empid == id);
+                $("#txtupdateid").val(selected.empid)
+                $("#txtupdatename").val(selected.empname)
+                $("#txtupdateaddrs").val(selected.empaddrs)
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a id="allshow" onclick="showAll()" href="#">All Employees</a>
+    </nav>
+    <div>
+        <h3>Employee Information</h3>
+        <div>
+            <table id="tblrecords" border="1" width="45%">
+                <tr>
+                    <td>Employee Id</td>
+                    <td>Employee Name</td>
+                    <td>Employee Address</td>
+                    <td>Options</td>
+                </tr>
+            </table>
+            <h3>Add Employee</h3>
+            <section>
+                <input type="number" id="txtid" placeholder="EmployeeId">
+                <input type="text" id="txtname" placeholder="EmployeeName">
+                <input type="text" id="txtaddrs" placeholder="EmployeeAddress">
+                <button onclick="addEntry()">Add Entry</button>
+            </section>
+            <h3>Edit Employee</h3>
+            <section>
+                <input type="number" id="txtupdateid" placeholder="EmployeeId">
+                <input type="text" id="txtupdatename" placeholder="EmployeeName">
+                <input type="text" id="txtupdateaddrs" placeholder="EmployeeAddress">
+                <button onclick="addEntry()">Add Entry</button>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
